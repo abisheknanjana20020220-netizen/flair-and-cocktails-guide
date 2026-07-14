@@ -1,0 +1,14 @@
+{
+  "name": "flair-and-cocktails-guide",
+  "displayName": "Abishek Flair Bartender Guide",
+  "version": "0.1.0",
+  "description": "Master Bartending & Flair Bartending Learning Platform",
+  "author": "Abishek Kumar",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}
