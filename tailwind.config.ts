@@ -3,32 +3,22 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
         primary: '#000000',
         secondary: '#D4AF37',
-        accent: '#FFFFFF',
+        accent: '#ffffff',
       },
-      animation: {
-        fadeIn: 'fadeIn 0.5s ease-in-out',
-        slideUp: 'slideUp 0.5s ease-out',
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
       },
-      keyframes: {
-        fadeIn: {
-          from: { opacity: '0' },
-          to: { opacity: '1' },
-        },
-        slideUp: {
-          from: { transform: 'translateY(20px)', opacity: '0' },
-          to: { transform: 'translateY(0)', opacity: '1' },
-        },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },
   plugins: [],
 }
-
 export default config
