@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
@@ -8,29 +6,29 @@
   box-sizing: border-box;
 }
 
+html,
 body {
+  width: 100%;
+  height: 100%;
   font-family: 'Inter', sans-serif;
   background-color: #000000;
   color: #ffffff;
   overflow-x: hidden;
 }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 10px;
-}
+/* Custom Styles */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-secondary text-black font-bold rounded-lg hover:bg-yellow-500 transition duration-300 inline-block;
+  }
 
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-secondary text-secondary font-bold rounded-lg hover:bg-secondary hover:text-black transition duration-300 inline-block;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #ffd700;
+  .gradient-text {
+    @apply bg-gradient-to-r from-secondary to-yellow-400 bg-clip-text text-transparent;
+  }
 }
 
 /* Animations */
@@ -43,38 +41,31 @@ body {
   }
 }
 
-@keyframes slideUp {
+@keyframes slideInUp {
   from {
-    transform: translateY(20px);
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-in-out;
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.animate-slide-up {
-  animation: slideUp 0.8s ease-out;
+::-webkit-scrollbar-track {
+  background: #000000;
 }
 
-/* Gradient Text */
-.gradient-text {
-  background: linear-gradient(135deg, #D4AF37 0%, #ffd700 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 5px;
 }
 
-/* Buttons */
-.btn-primary {
-  @apply px-6 py-3 bg-secondary text-primary font-bold rounded-lg transition-all hover:bg-yellow-500 hover:shadow-lg;
-}
-
-.btn-secondary {
-  @apply px-6 py-3 border-2 border-secondary text-secondary font-bold rounded-lg transition-all hover:bg-secondary hover:text-primary;
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a92f;
 }
